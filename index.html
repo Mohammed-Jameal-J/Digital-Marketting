@@ -344,6 +344,71 @@
     .lp-gallery, .lp-process, .ad-carousel{grid-template-columns:repeat(2,1fr);}
   }
 
+  /* ===== Quiz module ===== */
+  .quiz-progress{
+    position:sticky; top:65px; z-index:50; background:rgba(3,6,15,0.92); backdrop-filter:blur(10px);
+    padding:12px 0; margin-bottom:18px; border-bottom:1px solid var(--border);
+  }
+  .quiz-progress-bar{
+    height:6px; background:var(--bg-card); border-radius:4px; overflow:hidden; margin-bottom:6px;
+  }
+  .quiz-progress-fill{
+    height:100%; background:var(--accent-grad); width:0%; transition:width .3s ease;
+  }
+  .quiz-progress-text{font-family:var(--font-mono); font-size:12px; color:var(--text-mute);}
+  .quiz-q{
+    background:var(--bg-card); border:1px solid var(--border); border-radius:14px;
+    padding:20px 22px; margin-bottom:16px; position:relative;
+  }
+  .quiz-q-num{
+    font-family:var(--font-mono); font-size:11px; color:var(--cyan);
+    background:rgba(56,189,248,0.1); border:1px solid rgba(56,189,248,0.25);
+    padding:2px 9px; border-radius:6px; display:inline-block; margin-bottom:10px;
+  }
+  .quiz-q-text{font-size:15px; font-weight:600; color:#fff; margin-bottom:14px; line-height:1.5;}
+  .quiz-opts{display:flex; flex-direction:column; gap:8px;}
+  .quiz-opt{
+    display:flex; align-items:center; gap:10px; padding:10px 14px;
+    background:var(--bg-panel); border:1px solid var(--border); border-radius:9px;
+    cursor:pointer; font-size:13.5px; color:var(--text-main); transition:all .15s ease;
+  }
+  .quiz-opt:hover{border-color:var(--cyan); background:rgba(56,189,248,0.06);}
+  .quiz-opt.selected{border-color:var(--blue-2); background:rgba(37,99,235,0.15);}
+  .quiz-opt.correct{border-color:#34d399; background:rgba(52,211,153,0.12);}
+  .quiz-opt.incorrect{border-color:#f87171; background:rgba(248,113,113,0.12);}
+  .quiz-opt .opt-letter{
+    width:22px; height:22px; border-radius:50%; background:var(--bg-card); border:1px solid var(--border);
+    display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; flex-shrink:0;
+    font-family:var(--font-mono);
+  }
+  .quiz-opt.correct .opt-letter{background:#34d399; color:#022c22; border-color:#34d399;}
+  .quiz-opt.incorrect .opt-letter{background:#f87171; color:#450a0a; border-color:#f87171;}
+  .quiz-feedback{font-size:12.5px; margin-top:10px; padding-top:10px; border-top:1px solid var(--border); display:none;}
+  .quiz-feedback.show{display:block;}
+  .quiz-feedback.fb-correct{color:#34d399;}
+  .quiz-feedback.fb-incorrect{color:#f87171;}
+  .quiz-submit-bar{
+    text-align:center; padding:24px; position:sticky; bottom:0;
+    background:linear-gradient(180deg, transparent, rgba(3,6,15,0.95) 40%);
+  }
+  .quiz-btn{
+    font-family:var(--font-display); font-weight:700; font-size:14px;
+    background:var(--accent-grad); color:#fff; border:none; padding:13px 32px;
+    border-radius:10px; cursor:pointer; box-shadow:0 0 24px rgba(56,189,248,0.3);
+  }
+  .quiz-btn:disabled{opacity:0.5; cursor:not-allowed;}
+  .quiz-result{
+    text-align:center; padding:30px; background:var(--bg-card); border:1px solid var(--border);
+    border-radius:16px; display:none;
+  }
+  .quiz-result.show{display:block;}
+  .quiz-result .score-num{
+    font-family:var(--font-display); font-size:52px; font-weight:800;
+    background:var(--accent-grad); -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .quiz-result .score-label{color:var(--text-mute); font-size:14px; margin-top:6px;}
+  .quiz-result .score-msg{margin-top:16px; font-size:14.5px; color:var(--text-main); max-width:480px; margin-left:auto; margin-right:auto;}
+
   footer{
     padding:50px 48px; text-align:center; color:var(--text-mute); font-size:13px;
   }
@@ -454,32 +519,34 @@
       <div class="side-section-title">Marketplace Selling</div>
       <a class="side-link" href="#marketplace-setup"><span class="num">29</span> Amazon & Etsy Setup</a>
       <a class="side-link" href="#marketplace-showcase"><span class="num">30</span> Marketplace Showcase & Reach</a>
+      <a class="side-link" href="#order-tracking"><span class="num">31</span> Order Tracking & Invoice</a>
     </div>
     <div class="side-section">
       <div class="side-section-title">More Channels & Ops</div>
-      <a class="side-link" href="#podcast-audio"><span class="num">31</span> Podcast & Audio Marketing</a>
-      <a class="side-link" href="#inventory-sync"><span class="num">32</span> Multi-Channel Inventory Sync</a>
-      <a class="side-link" href="#export-tax"><span class="num">33</span> Export & Tax Deep-Dive</a>
+      <a class="side-link" href="#podcast-audio"><span class="num">32</span> Podcast & Audio Marketing</a>
+      <a class="side-link" href="#inventory-sync"><span class="num">33</span> Multi-Channel Inventory Sync</a>
+      <a class="side-link" href="#export-tax"><span class="num">34</span> Export & Tax Deep-Dive</a>
     </div>
     <div class="side-section">
       <div class="side-section-title">Site Performance</div>
-      <a class="side-link" href="#wordpress-performance"><span class="num">34</span> WordPress Speed Optimization</a>
-      <a class="side-link" href="#shopify-performance"><span class="num">35</span> Shopify Speed Optimization</a>
+      <a class="side-link" href="#wordpress-performance"><span class="num">35</span> WordPress Speed Optimization</a>
+      <a class="side-link" href="#shopify-performance"><span class="num">36</span> Shopify Speed Optimization</a>
     </div>
     <div class="side-section">
       <div class="side-section-title">Advanced Tracking & Compliance</div>
-      <a class="side-link" href="#gtm"><span class="num">36</span> Google Tag Manager (GTM)</a>
-      <a class="side-link" href="#capi"><span class="num">37</span> Server-Side Tracking (CAPI)</a>
-      <a class="side-link" href="#accessibility"><span class="num">38</span> Accessibility (WCAG Basics)</a>
+      <a class="side-link" href="#gtm"><span class="num">37</span> Google Tag Manager (GTM)</a>
+      <a class="side-link" href="#capi"><span class="num">38</span> Server-Side Tracking (CAPI)</a>
+      <a class="side-link" href="#accessibility"><span class="num">39</span> Accessibility (WCAG Basics)</a>
     </div>
     <div class="side-section">
       <div class="side-section-title">B2B Growth</div>
-      <a class="side-link" href="#b2b-leadgen"><span class="num">39</span> B2B Lead Generation</a>
+      <a class="side-link" href="#b2b-leadgen"><span class="num">40</span> B2B Lead Generation</a>
     </div>
     <div class="side-section">
       <div class="side-section-title">Finish</div>
-      <a class="side-link" href="#roadmap"><span class="num">40</span> 90-Day Roadmap</a>
-      <a class="side-link" href="#case-study"><span class="num">41</span> Real-World Case Study</a>
+      <a class="side-link" href="#roadmap"><span class="num">41</span> 90-Day Roadmap</a>
+      <a class="side-link" href="#case-study"><span class="num">42</span> Real-World Case Study</a>
+      <a class="side-link" href="#final-quiz"><span class="num">43</span> Final Quiz (50 Questions)</a>
     </div>
   </nav>
 
@@ -2227,6 +2294,46 @@
       </div>
 
       <div class="card">
+        <h3><span class="icon">📦</span> Setting Up Full Product Details — Price, Quality &amp; Size Variants</h3>
+        <p>Listing create pannradhukku appuram, idhu dhaan most important part — product details correct ah, complete ah fill pannradhu. Idha thappa pannina, returns/complaints increase aagum, ranking kammi aagum.</p>
+        <div class="grid2" style="margin-top:12px;">
+          <div class="tool">
+            <span class="tname">💰 Pricing Setup</span>
+            <ul style="margin-top:6px; padding-left:16px; font-size:13px;">
+              <li>Cost price + packaging + marketplace fee (Amazon ~15-18% referral fee depending on category, Etsy ~6.5% transaction + payment fee) + your profit margin = final selling price</li>
+              <li>Amazon: "Pricing" tab la — "Your Price" (what buyer pays) vs "Business Price" (if B2B enabled) separately set pannalam</li>
+              <li>Etsy: price in USD — convert your INR cost properly (use current exchange rate + buffer for fluctuation)</li>
+              <li>Always check competitor pricing for similar products before finalizing</li>
+            </ul>
+          </div>
+          <div class="tool">
+            <span class="tname">⭐ Quality / Condition Details</span>
+            <ul style="margin-top:6px; padding-left:16px; font-size:13px;">
+              <li>Amazon: "Condition" field — New, Used-Like New, Refurbished, etc. (most sellers = "New")</li>
+              <li>Mention material/quality grade in bullet points — e.g., "100% pure cotton, 200 GSM fabric" or "925 Sterling Silver, hypoallergenic"</li>
+              <li>Etsy: highlight handmade/craftsmanship details — "Hand-poured soy wax", "Hand-stitched, no machine work"</li>
+              <li>Add a "What's included" line — avoids confusion/returns (e.g., "Includes 1 kurta only, dupatta not included")</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px; background:rgba(56,189,248,0.04);">
+          <h3 style="font-size:15px;"><span class="icon">📏</span> Adding Size/Variant Options (Step-by-Step)</h3>
+          <ul class="steps">
+            <li><span class="stepnum">1</span><div><strong>Amazon — "Variation" setup:</strong> While creating listing, select "Add variations" → choose variation theme (Size, Color, Size-Color combo) → for each variation (S, M, L, XL), enter separate SKU, price (can differ per size), quantity, and at least 1 unique image per major variant</div></li>
+            <li><span class="stepnum">2</span><div><strong>Etsy — "Variations" setup:</strong> In listing editor → "Variations" section → enable → add option type (e.g., "Size": Small/Medium/Large, or "Color": Red/Blue) → set price difference if any size costs more (e.g., XL +$2) → set quantity per variant</div></li>
+            <li><span class="stepnum">3</span><div><strong>Size chart:</strong> Add a size chart image (chest/waist/length in cm and inches) as one of your listing photos — reduces wrong-size returns significantly</div></li>
+            <li><span class="stepnum">4</span><div><strong>SKU per variant:</strong> Each size/color gets its own SKU (refer Module 29's SKU formula) — e.g., KUR-BLUCOT-S, KUR-BLUCOT-M, KUR-BLUCOT-L — this is critical for inventory tracking once you have variants</div></li>
+            <li><span class="stepnum">5</span><div><strong>Stock quantity per variant:</strong> Don't just set total stock — set quantity per size/color individually, otherwise you'll oversell a popular size while a less popular one sits unsold</div></li>
+          </ul>
+          <div class="example-box">
+            <span class="tag">Real Example — Kurta Seller</span>
+            <p>Single "Blue Cotton Kurta" listing — but with Size variation (S/M/L/XL/XXL) and separate SKUs for each (KUR-BLUCOT-S through KUR-BLUCOT-XXL). M and L sold out in week 1 (stock 0 each), but S and XXL still had stock — because quantity was tracked per size, the seller knew exactly what to restock instead of guessing from a single combined number.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
         <h3><span class="icon">✅</span> Marketplace Setup Checklist</h3>
         <div class="pill-row">
           <span class="pill">GST/PAN ready</span>
@@ -2234,8 +2341,11 @@
           <span class="pill">SKU system created (spreadsheet)</span>
           <span class="pill">Product photos (5-10 per item)</span>
           <span class="pill">Listing title/description/tags filled</span>
+          <span class="pill">Price covers fees + margin</span>
+          <span class="pill">Quality/material details added</span>
+          <span class="pill">Size/variant options set with size chart</span>
+          <span class="pill">Stock quantity tracked per variant</span>
           <span class="pill">Shipping & returns policy set</span>
-          <span class="pill">Pricing covers fees + margin</span>
         </div>
       </div>
     </section>
@@ -2331,9 +2441,92 @@
     </section>
 
     <!-- MODULE 31 -->
-    <section class="module" id="podcast-audio">
+    <section class="module" id="order-tracking">
       <div class="module-head">
         <span class="module-tag">MODULE 31</span>
+        <h2>Order Tracking &amp; Customer Invoice — WordPress &amp; Shopify</h2>
+      </div>
+      <p class="desc">Order vandhadhu — ipo andha order-ah track pannradhu, customer ku invoice/receipt anuppradhu eppadi nu paakalam. Idhu illama, customer "en order enga irukku" nu confuse aaguvanga, trust kammi aagum.</p>
+
+      <div class="grid2">
+        <div class="card">
+          <h3><span class="icon">🛍️</span> Shopify — Order Tracking (Built-in, Minimal Setup)</h3>
+          <p>Shopify la order tracking <strong>mostly built-in</strong> — extra plugin doesn't always need, but for better customer experience, idha add pannunga:</p>
+          <ul class="steps">
+            <li><span class="stepnum">1</span><div><strong>Built-in:</strong> Settings → Notifications — order confirmation email automatic ah customer ku pogum (no app needed)</div></li>
+            <li><span class="stepnum">2</span><div><strong>Order status page:</strong> Shopify automatic ah generate pannum — customer "Track Order" link click panna, status (Processing/Shipped/Delivered) paakalam</div></li>
+            <li><span class="stepnum">3</span><div><strong>For live courier tracking (recommended app):</strong> "AfterShip Order Tracking" or "Track123" — free tier available — connects to courier (Delhivery, Bluedart, etc.) and shows live tracking on a branded page</div></li>
+            <li><span class="stepnum">4</span><div><strong>WhatsApp updates (optional app):</strong> "WhatsApp Chat + Marketing" apps — sends automatic order/shipping updates via WhatsApp, popular in India</div></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3><span class="icon">🔌</span> WordPress (WooCommerce) — Order Tracking Plugins</h3>
+          <p>WordPress la, plain WordPress order tracking native ah illa — WooCommerce (e-commerce plugin) install pannina dhaan order management varum.</p>
+          <ul class="steps">
+            <li><span class="stepnum">1</span><div><strong>Base requirement:</strong> "WooCommerce" plugin (free) — this gives orders, customers, basic email notifications by default</div></li>
+            <li><span class="stepnum">2</span><div><strong>Order tracking page:</strong> "WooCommerce Order Tracking" or "AfterShip" plugin — adds a "Track Your Order" page where customer enters order ID + email</div></li>
+            <li><span class="stepnum">3</span><div><strong>Live courier tracking:</strong> "YITH WooCommerce Order Tracking" — connects to multiple courier APIs (India Post, Delhivery, DTDC etc.)</div></li>
+            <li><span class="stepnum">4</span><div><strong>Status updates via WhatsApp/SMS:</strong> "WooCommerce WhatsApp Notifications" plugin — sends automatic message when order status changes (Processing → Shipped → Delivered)</div></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3><span class="icon">🧾</span> Customer Invoice / Order Confirmation — Complete Details</h3>
+        <p>Customer order panna udane, 2 things automatically pogonum: <strong>(1) Order confirmation message</strong> (WhatsApp/SMS/Email — immediate) and <strong>(2) Invoice/Receipt</strong> (formal document — email or downloadable PDF).</p>
+
+        <div class="grid2" style="margin-top:12px;">
+          <div class="tool">
+            <span class="tname">📩 Order Confirmation Message (Instant)</span>
+            Goes out within seconds of purchase — short, reassuring, sets expectation. Sent via Email (automatic), SMS (if configured), or WhatsApp (if app/plugin connected).
+          </div>
+          <div class="tool">
+            <span class="tname">🧾 Invoice/Receipt (Formal Document)</span>
+            A proper billing document — order details, GST breakup (if applicable), seller details, used for accounting/tax and as proof of purchase. Usually emailed as PDF attachment or available to download from order page.
+          </div>
+        </div>
+
+        <div class="example-box" style="margin-top:14px;">
+          <span class="tag">Real Example — Order Confirmation Message (WhatsApp/SMS)</span>
+          <p>"Hi Priya! 🎉 Unga order #RI1042 confirm aagiduchu. <br>
+          Item: Blue Cotton Kurta (Size M) x1 <br>
+          Total: ₹1,299 <br>
+          Expected delivery: 3-5 business days <br>
+          Track your order: royalstore.com/track/RI1042 <br>
+          Thanks for shopping with us! 🙏"</p>
+        </div>
+
+        <div class="example-box">
+          <span class="tag">Real Example — Invoice Email Content</span>
+          <p>Subject: "Your Invoice for Order #RI1042 — Royal Store" <br><br>
+          Body includes: Seller name/address/GSTIN, Buyer name/address, Order date, Order ID, Item description with HSN code, Quantity, Unit price, GST (CGST+SGST or IGST breakup), Total amount paid, Payment method, "Thank you" note + return/refund policy link, PDF invoice attached.</p>
+        </div>
+
+        <ul class="steps" style="margin-top:14px;">
+          <li><span class="stepnum">1</span><div><strong>Shopify:</strong> Settings → Notifications → "Order confirmation" template — fully editable (logo, colors, text). For GST-compliant PDF invoices, use a free/paid app like "Invoice Hero" or "Order Printer" — generates downloadable PDF invoices automatically</div></li>
+          <li><span class="stepnum">2</span><div><strong>WooCommerce:</strong> Default emails are basic — install "WooCommerce PDF Invoices & Packing Slips" (free plugin) — auto-generates a proper GST-format invoice PDF and attaches it to the order confirmation email</div></li>
+          <li><span class="stepnum">3</span><div><strong>Amazon/Etsy:</strong> Invoices are auto-generated by the platform itself (Seller Central → Orders → download invoice) — you don't need a separate tool, but you must ensure your GST/tax settings are correctly filled in your seller profile so the invoice auto-populates correctly</div></li>
+          <li><span class="stepnum">4</span><div><strong>WhatsApp order updates (no-code):</strong> Use WooCommerce/Shopify WhatsApp notification apps (mentioned above) — map "Order Placed", "Shipped", "Delivered" statuses to auto-send WhatsApp templates</div></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3><span class="icon">✅</span> Order &amp; Invoice Checklist</h3>
+        <div class="pill-row">
+          <span class="pill">Order confirmation email/SMS active</span>
+          <span class="pill">Track Order page working</span>
+          <span class="pill">GST-compliant invoice template set</span>
+          <span class="pill">Invoice auto-attached to confirmation email</span>
+          <span class="pill">Courier tracking connected (if live tracking needed)</span>
+          <span class="pill">WhatsApp status updates configured (optional)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULE 32 -->
+    <section class="module" id="podcast-audio">
+      <div class="module-head">
+        <span class="module-tag">MODULE 32</span>
         <h2>Podcast &amp; Audio Marketing</h2>
       </div>
       <p class="desc">Audio content — Spotify/YouTube podcasts, voice notes, audio ads — niche audience build panna and brand authority create panna powerful channel. Video edit panna time illama kooda start panna mudiyum.</p>
@@ -2387,7 +2580,7 @@
     <!-- MODULE 32 -->
     <section class="module" id="inventory-sync">
       <div class="module-head">
-        <span class="module-tag">MODULE 32</span>
+        <span class="module-tag">MODULE 33</span>
         <h2>Multi-Channel Inventory Sync — Shopify + Amazon + Etsy Together</h2>
       </div>
       <p class="desc">Same product-ah multiple platforms la (own website + Amazon + Etsy) sell pannina, stock count manually update panna impossible — oru place la 5 sold aana, vera place la overselling aagum. Idha solve panradhu eppadi nu paakalam.</p>
@@ -2448,7 +2641,7 @@
     <!-- MODULE 33 -->
     <section class="module" id="export-tax">
       <div class="module-head">
-        <span class="module-tag">MODULE 33</span>
+        <span class="module-tag">MODULE 34</span>
         <h2>International Selling — Export &amp; Tax Deep-Dive</h2>
       </div>
       <p class="desc">Etsy/Amazon Global Selling vazhi velinaadu customers ku sell panna — basic GST/IEC mention pannirundhom (Module 29). Idhu andha topic-ah deeper ah explain pannudhu — LUT, GST on exports, payment receiving methods.</p>
@@ -2502,7 +2695,7 @@
     <!-- MODULE 34 -->
     <section class="module" id="wordpress-performance">
       <div class="module-head">
-        <span class="module-tag">MODULE 34</span>
+        <span class="module-tag">MODULE 35</span>
         <h2>WordPress Performance &amp; Page Speed Optimization</h2>
       </div>
       <p class="desc">Module 03 la WordPress website build panniyaachu. Ipo idha <strong>fast ah</strong> load aaga optimize pannuvom — slow site na, visitors leave aaiduvanga + Google ranking kammi aagum.</p>
@@ -2563,7 +2756,7 @@
     <!-- MODULE 35 -->
     <section class="module" id="shopify-performance">
       <div class="module-head">
-        <span class="module-tag">MODULE 35</span>
+        <span class="module-tag">MODULE 36</span>
         <h2>Shopify Performance &amp; Page Speed Optimization</h2>
       </div>
       <p class="desc">Shopify hosting Shopify-ye handle pannudhu (so it's generally faster than self-hosted WordPress by default), but theme choice, apps, and images still massively affect speed and conversions.</p>
@@ -2623,7 +2816,7 @@
     <!-- MODULE 36 -->
     <section class="module" id="gtm">
       <div class="module-head">
-        <span class="module-tag">MODULE 36</span>
+        <span class="module-tag">MODULE 37</span>
         <h2>Google Tag Manager (GTM) — Central Tracking Setup</h2>
       </div>
       <p class="desc">Ipo varaikkum Meta Pixel + GA4 — separate plugins vazhi install pannirukkom (Module 05, 07). Andha approach beginners-ku fine, but GTM use pannina, <strong>ellam tags oru place la</strong> manage panna mudiyum — code change panna venam, plugin update wait panna venam.</p>
@@ -2668,7 +2861,7 @@
     <!-- MODULE 37 -->
     <section class="module" id="capi">
       <div class="module-head">
-        <span class="module-tag">MODULE 37</span>
+        <span class="module-tag">MODULE 38</span>
         <h2>Server-Side Tracking — Meta Conversions API (CAPI) &amp; iOS 14+ Impact</h2>
       </div>
       <p class="desc">2021 la Apple "iOS 14" update varudhu — andha appuram, browser-based tracking (Pixel mattum) accuracy kammi aaiduchu. Idha solve panna Meta "Conversions API (CAPI)" nu oru server-side tracking method introduce pannuchu.</p>
@@ -2724,7 +2917,7 @@
     <!-- MODULE 38 -->
     <section class="module" id="accessibility">
       <div class="module-head">
-        <span class="module-tag">MODULE 38</span>
+        <span class="module-tag">MODULE 39</span>
         <h2>Website Accessibility (WCAG Basics) — Compliance &amp; SEO</h2>
       </div>
       <p class="desc">Accessibility na — unga website-ah, disabilities (vision, hearing, motor) irukravanga kooda use panna mudiyum nu ensure panradhu. Idhu "nice to have" mattum illa — legal requirement (many countries), AND Google ranking factor kooda.</p>
@@ -2788,7 +2981,7 @@
     <!-- MODULE 39 -->
     <section class="module" id="b2b-leadgen">
       <div class="module-head">
-        <span class="module-tag">MODULE 39</span>
+        <span class="module-tag">MODULE 40</span>
         <h2>B2B Lead Generation — Cold Outreach, Lead Magnets &amp; Sales Funnels</h2>
       </div>
       <p class="desc">Module 26 la LinkedIn Ads cover pannirukom. Idhu andha topic-ah deeper ah — B2B (business-to-business) ku specific ah, cold outreach sequences, lead magnets, and full sales funnel structure eppadi build pannradhu nu paakalam.</p>
@@ -2866,7 +3059,7 @@
     <!-- MODULE 40 -->
     <section class="module" id="roadmap">
       <div class="module-head">
-        <span class="module-tag">MODULE 40</span>
+        <span class="module-tag">MODULE 41</span>
         <h2>90-Day Action Roadmap</h2>
       </div>
       <p class="desc">Theory mattum padichu poyaadhu — idha follow panni, real ah implement pannunga.</p>
@@ -2914,7 +3107,7 @@
     <!-- MODULE 41 -->
     <section class="module" id="case-study">
       <div class="module-head">
-        <span class="module-tag">MODULE 41</span>
+        <span class="module-tag">MODULE 42</span>
         <h2>Real-World Case Study — Interior Design Client (Full Workflow)</h2>
       </div>
       <p class="desc">Idhu dhaan course-oda final module — oru <strong>real client scenario</strong>, start to finish. "Interior Design" company oru client ah varudhu, "marketing pannunga — landing page, SEO, Meta Ads, Google Ads, social media posts ellam venum" nu sollum. Idha eppadi handle pannradhu nu, namba ipo padicha 40 modules-ah <strong>oru real project la</strong> apply panni kaattuvom.</p>
@@ -3179,7 +3372,33 @@
 
       <div class="card">
         <h3><span class="icon">🏁</span> Closing Note</h3>
-        <p>Idhu dhaan real client work — every single module ipo padicha course-la la, oru actual project la eppadi fit aaguthu nu paathom. New client varum podhu, idha template ah use pannunga — discovery → assets → landing page → SEO/tracking → creatives → ads launch → social posting → monthly report → optimize. Indha cycle repeat pannina, neenga confident ah, professional ah, results-oriented ah work pannalam. All the best for your digital marketing journey! 🚀</p>
+        <p>Idhu dhaan real client work — every single module ipo padicha course-la la, oru actual project la eppadi fit aaguthu nu paathom. New client varum podhu, idha template ah use pannunga — discovery → assets → landing page → SEO/tracking → creatives → ads launch → social posting → monthly report → optimize. Indha cycle repeat pannina, neenga confident ah, professional ah, results-oriented ah work pannalam. Ipo final module la — 50 questions quiz irukku, unga learning-ah test pannikonga! 🚀</p>
+      </div>
+    </section>
+
+    <!-- MODULE 43 -->
+    <section class="module" id="final-quiz">
+      <div class="module-head">
+        <span class="module-tag">MODULE 43</span>
+        <h2>Final Assessment — 50 Question Quiz</h2>
+      </div>
+      <p class="desc">Course mudinjadhu! Ipo unga learning-ah test pannunga. 50 questions, ella module-um cover aagum — Meta Ads, Google Ads, SEO, social media, marketplaces, tracking, B2B, ellam. Answer select pannunga, immediate feedback varum, last la unga score kaattum.</p>
+
+      <div class="quiz-progress">
+        <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quizProgressFill"></div></div>
+        <div class="quiz-progress-text" id="quizProgressText">0 / 50 answered</div>
+      </div>
+
+      <div id="quizContainer"></div>
+
+      <div class="quiz-submit-bar">
+        <button class="quiz-btn" id="quizSubmitBtn">Submit Quiz</button>
+      </div>
+
+      <div class="quiz-result" id="quizResult">
+        <div class="score-num" id="quizScoreNum">0/50</div>
+        <div class="score-label">Your Score</div>
+        <div class="score-msg" id="quizScoreMsg"></div>
       </div>
     </section>
 
@@ -3190,6 +3409,158 @@
   <div class="mark2">DM Master Course</div>
   <div>Build skills, run real campaigns, get real results. Idha use pannittu neenga oru business pannalum, oru career start panna mudiyum. 🚀</div>
 </footer>
+
+<script>
+const quizQuestions = [
+  {q:"Digital marketing-la 'SEO' nu sollum?", opts:["Search Engine Optimization","Social Engagement Outreach","Sales Efficiency Operations","Site Embed Object"], correct:0, fb:"SEO = Search Engine Optimization — free organic traffic Google la varadhukku."},
+  {q:"TOFU-MOFU-BOFU funnel la 'BOFU' represent panradhu?", opts:["Top of funnel","Brand of funnel","Bottom of funnel - conversion stage","Budget of funnel"], correct:2, fb:"BOFU = Bottom of Funnel — buy panna ready aana customers, direct offer/CTA idha target pannum."},
+  {q:"Meta Ads la 'Pixel' edhukku use pannuvom?", opts:["Image quality improve panna","Website visitors-oda behavior track panna","Ad budget kammi panna","Font size maatha"], correct:1, fb:"Meta Pixel — website la varum users eppadi behave pannuranga (PageView, Purchase, Lead) nu track pannum, ad optimization ku critical."},
+  {q:"Google Ads la 'Negative Keywords' edhukku?", opts:["Ad-ah completely off panna","Irrelevant searches ku ad show aagama irukka","Budget increase panna","Quality score kammi panna"], correct:1, fb:"Negative keywords — unrelated searches (e.g., 'jobs', 'course') ku unga ad show aagaadha, budget waste aagaadhu."},
+  {q:"WordPress la page builder plugin ethu commonly use pannuvom (no-code)?", opts:["Photoshop","Elementor","Excel","Tableau"], correct:1, fb:"Elementor — drag & drop page builder, coding theriyama professional pages design panna help pannum."},
+  {q:"Google Search Console (GSC) la 'Sitemap' edhukku submit pannuvom?", opts:["Website-oda design kaattradhukku","Google ku unga ella pages-um crawl panna kaattradhukku","Ad budget track panna","Email list create panna"], correct:1, fb:"Sitemap — unga website pages-oda list, Google ku 'idha ellam crawl pannunga' nu kaattudhu, faster indexing ku help pannum."},
+  {q:"Meta Ads campaign structure la correct order edhu?", opts:["Ad → Ad Set → Campaign","Campaign → Ad Set → Ad","Ad Set → Campaign → Ad","Campaign → Ad → Ad Set"], correct:1, fb:"Correct order: Campaign (goal) → Ad Set (audience/budget) → Ad (creative)."},
+  {q:"CTR (Click Through Rate) la enna measure pannuvom?", opts:["Evlo per ad paathanga","Ad paathavanga la evlo % click pannanga","Total ad spend","Website loading speed"], correct:1, fb:"CTR = clicks ÷ impressions × 100 — ad paathavanga la evlo % click pannanga nu kaatum."},
+  {q:"Google Ads la 'Exact Match' keyword format ethu?", opts:["plumber chennai","\"plumber chennai\"","[plumber chennai]","#plumber chennai"], correct:2, fb:"Exact Match — square brackets [ ] use pannuvom, exact search term mattum target pannum, tight & high intent."},
+  {q:"Instagram Reels-ku best hook timing enna?", opts:["First 10-15 seconds","First 1-3 seconds","Last 5 seconds","Middle of the video"], correct:1, fb:"First 1-3 seconds dhaan most critical — scroll-stop pannaama na, user immediately scroll pannidum."},
+  {q:"CapCut tool edhukku use pannuvom?", opts:["Email marketing","Video editing (reels/shorts)","Keyword research","Domain purchase"], correct:1, fb:"CapCut — free mobile/desktop video editing tool, reels/shorts edit panna, captions auto-generate panna use pannuvom."},
+  {q:"WhatsApp Business la 'Catalog' feature edhukku?", opts:["Customer support tickets","Products/services-oda photos + price showcase panna","Email automation","Ad account link panna"], correct:1, fb:"Catalog — unga products/services-ah photos + price-oda list pannalam, customers WhatsApp-laye browse pannuvanga."},
+  {q:"ROAS (Return on Ad Spend) calculation formula enna?", opts:["Ad spend ÷ Revenue","Revenue ÷ Ad spend","Revenue - Ad spend","Ad spend × Revenue"], correct:1, fb:"ROAS = Revenue ÷ Ad Spend. Example: ₹20,000 revenue / ₹5,000 spend = 4x ROAS."},
+  {q:"Client approach pannum bodhu 'free audit' offer panradhu edhukku?", opts:["Time waste panna","Risk-free ah feel aaga vekka, easy ah agree panna vekka","Price increase panna","Competitor-ah block panna"], correct:1, fb:"Free audit — prospect ku 'no obligation' feel varum, easy ah trust build aagum, sales pressure illama approach panna mudiyum."},
+  {q:"LinkedIn-la B2B clients ku showcase panna best content format ethu?", opts:["Random memes","Case study posts + carousel PDFs","Personal vacation photos","Unrelated jokes"], correct:1, fb:"LinkedIn B2B-ku — case study posts (problem → strategy → result) + carousel PDFs professional trust build pannum."},
+  {q:"Influencer marketing la 'Micro-influencer' nu yaarai solluvom?", opts:["1 million+ followers","1,000 - 100,000 followers, niche audience","Celebrity status mattum","TV personalities mattum"], correct:1, fb:"Micro-influencers — chinna but highly engaged audience (1K-100K followers), local businesses ku affordable & effective."},
+  {q:"Affiliate marketing la 'UTM link' edhukku use pannuvom?", opts:["Website design improve panna","Eppadi traffic varudhu nu track panna (which affiliate brought the sale)","Ad budget reduce panna","Email open rate kammi panna"], correct:1, fb:"UTM links — eth affiliate/source vazhi sale vandhuchu nu exact ah track panna help pannum."},
+  {q:"Zapier tool edhukku use pannuvom (marketing automation)?", opts:["Video editing","Different apps-ah connect panni automatic workflows create panna","Image background remove","SEO keyword research"], correct:1, fb:"Zapier — forms, CRM, WhatsApp, email ellam connect panni, manual work illama automatic flow create pannalam."},
+  {q:"CRO (Conversion Rate Optimization) la 'A/B Testing' enna pannuvom?", opts:["Rendu different versions test panni, edhu better convert pannuthu nu kandupidikkardhu","Ad budget double panradhu","Website-ah delete panradhu","Email list purchase panradhu"], correct:0, fb:"A/B testing — headline/button/image rendu versions test panni, data based ah edhu better nu decide pannuvom. Onnu mattum oru time change pannanum."},
+  {q:"Microsoft Clarity tool edhukku use pannuvom?", opts:["Email campaigns","Free heatmaps — users page la enga click/scroll pannuranga nu paakka","Domain purchase","Social media scheduling"], correct:1, fb:"Microsoft Clarity — free heatmap tool, users-oda behavior visual ah paakalam, CRO improve panna help pannum."},
+  {q:"Shopify la Google Shopping Ads run panna edhu thevai?", opts:["Google Merchant Center + product feed","Instagram account mattum","WhatsApp Business","Twitter verified badge"], correct:0, fb:"Google Merchant Center la product feed upload pannina dhaan, Google Shopping Ads la unga products show aagum."},
+  {q:"Local SEO la 'NAP consistency' nu enna sollum?", opts:["Name, Address, Phone — ella platforms-layum same ah irukkanum","New Advertising Plan","No Ad Policy","Network Access Point"], correct:0, fb:"NAP = Name, Address, Phone — Google Business Profile, website, social media ella idangalilum exact ah same ah irukkanum, local ranking ku critical."},
+  {q:"AIDA copywriting framework la 'I' represent panradhu?", opts:["Information","Interest","Investment","Instruction"], correct:1, fb:"AIDA = Attention, Interest, Desire, Action. 'I' = Interest — andha problem-oda relate panna vekkardhu."},
+  {q:"Ad rejection avoid panna, Meta Ads policy la enna avoid pannanum?", opts:["Product photos use panradhu","Exaggerated/false claims, before-after weight loss images (certain categories)","Price mention panradhu","Business name kaattradhu"], correct:1, fb:"False claims, misleading before-after images (especially health/weight loss) — Meta policy violation, ad rejection/account ban risk."},
+  {q:"AI tools (ChatGPT/Claude) marketing-ku eppadi use pannalam?", opts:["Ad copy draft panna, content ideas generate panna — but always review/edit pannanum","Customer data fully automatic ah handle panna","Legal documents replace panna","Manual work completely zero pannidalam"], correct:0, fb:"AI tools content draft/ideas-ku speed kodukkum, but always human review + brand voice edit pannanum, blind ah publish pannakoodadhu."},
+  {q:"YouTube Ads campaign type ethu awareness-ku best?", opts:["Skippable in-stream ads","Shopping ads mattum","Search ads mattum","Display ads mattum"], correct:0, fb:"Skippable in-stream video ads — YouTube awareness campaigns ku popular, cost-effective (skip pannina cost varaadhu)."},
+  {q:"Negative review vandha, business eppadi respond pannanum?", opts:["Ignore pannanum","Professional ah, calm ah respond panni, offline resolve panna try pannanum","Customer-ah block pannanum","Fake positive reviews post pannanum"], correct:1, fb:"Negative reviews-ku professional, empathetic ah respond pannunga, public la solution offer pannunga — idhu trust build pannum."},
+  {q:"Amazon Seller account-ku compulsory document ethu (India)?", opts:["Passport mattum","GST Registration Certificate","Driving License mattum","College degree certificate"], correct:1, fb:"GST Registration — Amazon India seller account ku most categories ku compulsory."},
+  {q:"SKU (Stock Keeping Unit) na enna?", opts:["Marketplace-oda product ID (auto-generated)","Unga internal product code, inventory track panna","Customer review rating","Ad campaign ID"], correct:1, fb:"SKU — neenga create panra internal code, inventory/stock track panna use pannuvom (ASIN/Listing ID vera, SKU vera)."},
+  {q:"Etsy la product price ethu currency la set pannuvom (typically)?", opts:["INR mattum","USD (mostly, for global/export sellers)","EUR mattum","JPY mattum"], correct:1, fb:"Etsy mostly USD la operate aagum since Indian sellers mainly export ku use pannuvanga (US/UK/EU buyers)."},
+  {q:"Amazon-la 'FBA' nu enna sollum?", opts:["Free Business Account","Fulfilled by Amazon — Amazon stores & ships unga products","Fast Business Approval","Final Billing Amount"], correct:1, fb:"FBA = Fulfilled by Amazon — Amazon unga products warehouse-la store panni, orders vandha automatic ah ship pannum."},
+  {q:"Multi-channel selling (Shopify + Amazon + Etsy) la 'overselling' problem enna?", opts:["Too much profit varudhu","Same product, multiple channels la sold aaiduchu, but stock not enough — customer ku cancel sollanum","Too many reviews varudhu","Shipping cost free aagiduchu"], correct:1, fb:"Overselling — inventory sync illama, 2 channels la same item sold aaiduchu but stock 1 mattum irundha, oru order cancel pannanum."},
+  {q:"Export selling ku 'IEC Code' edhukku thevai?", opts:["Domestic selling ku mattum","International shipping/export panna (issued free via DGFT)","Social media verification ku","Email marketing ku"], correct:1, fb:"IEC (Import Export Code) — international ah products ship panna legally thevai, DGFT website la free ah apply pannalam."},
+  {q:"WordPress website speed improve panna, image edha pannanum?", opts:["High resolution-laye vekkanum, compress pannakoodadhu","Compress pannanum (TinyPNG/plugins use panni)","Delete pannidanum","Color-ah black & white maathanum"], correct:1, fb:"Images compress pannunga (TinyPNG, Smush plugin) — file size kammi aagum, page load speed improve aagum."},
+  {q:"Shopify speed optimization la 'app bloat' problem enna?", opts:["Too many unused apps installed irundha, store slow aagum","Too few products irundha","Too many customers irundha","Domain expired aagiduchu"], correct:0, fb:"App bloat — necessary illaadha apps install panni vechirundha, ovvoru app oru script load pannum, store speed kammi aagum."},
+  {q:"Google Tag Manager (GTM) la main advantage enna?", opts:["Website design maathalam","Ella tracking tags (Pixel, GA4, conversion) oru central place la manage panna mudiyum, code touch panna venam","Domain free ah kidaikkum","SEO automatic ah #1 ranking varum"], correct:1, fb:"GTM — single container, ella tags centralized ah manage pannalam, future updates ku developer/plugin wait panna venam."},
+  {q:"iOS 14+ update apparam, Meta Pixel tracking-la enna problem vandhuchu?", opts:["Pixel completely work panna nirutiduchu","App Tracking Transparency (ATT) — users 'Don't Allow' select panna, data loss aagudhu","Pixel free ah maari poiduchu","Pixel speed faster aagiduchu"], correct:1, fb:"iOS 14+ ATT popup-la 60-70% users tracking 'Don't Allow' pannuranga — Pixel data loss aagudhu, CAPI (server-side) idha solve pannum."},
+  {q:"Conversions API (CAPI) edhukku use pannuvom?", opts:["Ad budget kammi panna","Server-side ah, browser tracking miss aana data-ah Meta ku direct ah send panna","Website design maatha","Email list purchase panna"], correct:1, fb:"CAPI — server (Shopify/website) direct ah Meta ku data send pannum, browser-based Pixel loss-ah compensate pannum."},
+  {q:"WCAG accessibility la 'Alt text' edhukku add pannuvom?", opts:["Image-ku description kodukka, screen readers ku help panna + SEO ku help panna","Image size kammi panna","Image color maatha","Image delete panna"], correct:0, fb:"Alt text — vision-impaired users ku screen reader explain pannum, AND Google SEO ku image ranking ku help pannum."},
+  {q:"WCAG la color contrast minimum ratio enna (normal text ku)?", opts:["1:1","2:1","4.5:1","10:1"], correct:2, fb:"4.5:1 minimum contrast ratio — normal text ku WCAG AA standard, low contrast text accessibility fail pannum."},
+  {q:"B2B lead magnet example ethu?", opts:["Random discount coupon","Free ebook/template/webinar — value-first, email capture panna","Celebrity endorsement","TV advertisement"], correct:1, fb:"Lead magnets — free valuable resource (ebook, template, webinar) email/contact details exchange ku kodukkardhu, B2B warm-up ku."},
+  {q:"Cold outreach sequence la 'soft break-up' email enna purpose?", opts:["Permanently relationship end panradhu","Pressure remove panni, often highest reply rate varum follow-up","Client-ah angry panna","Discount automatically kodukka"], correct:1, fb:"Soft break-up email ('I'll stop reaching out...') — pressure remove pannudhu, ironically idhu dhaan often best response rate."},
+  {q:"Landing page la 'Hero section' enna contain pannanum?", opts:["FAQ mattum","Headline + sub-headline + image/video + primary CTA","Footer links mattum","Privacy policy mattum"], correct:1, fb:"Hero section (above the fold) — first 3 sec la user 'enna idhu' nu therinjukanum, clear headline + CTA must."},
+  {q:"Landing page la primary CTA evlo thadava repeat pannanum?", opts:["Once mattum","3 places (hero, middle, end) — same CTA repeat","10+ thadava","Never repeat pannakoodadhu"], correct:1, fb:"Primary CTA — hero, middle, end — 3 places la repeat pannunga, but rendu different goals vekkadheenga."},
+  {q:"Email marketing la 'Abandoned Cart' email edhukku send pannuvom?", opts:["New product launch announce panna","Cart la item vechu site vittu povanga ku, recover panna automatic email","Spam customers ku","Unsubscribe pannavanga ku"], correct:1, fb:"Abandoned cart email — cart la item vechittu leave panna users ku automatic reminder (often with discount), 15-20% recover rate."},
+  {q:"Google Business Profile (GBP) setup la enna free ah varum?", opts:["Paid ads mattum","Listing on Google Maps + Search, reviews collect panna","Domain registration","Website hosting"], correct:1, fb:"Google Business Profile — completely free, Google Maps/Search la business show aagum, customer reviews collect pannalam."},
+  {q:"Performance Max (PMax) campaign Google Ads-la enna?", opts:["Manual keyword targeting mattum","AI automatic ah multiple Google placements (Search, Display, YouTube, Shopping) la oru campaign la run pannum","Email marketing tool","Social media scheduler"], correct:1, fb:"PMax — AI use panni, ella Google channels-layum automatic ah ads run pannum, single campaign setup."},
+  {q:"Reels/Shorts ku trending audio use panradhu edhukku help pannum?", opts:["Video quality automatically improve aagum","Algorithm boost + discoverability increase aagum","Video length automatic ah kuraiyum","Caption automatically translate aagum"], correct:1, fb:"Trending audio use panna, platform algorithm andha content-ah more people ku push pannum, organic reach improve aagum."},
+  {q:"90-day roadmap la Days 1-30 (Foundation phase) la enna pannanum?", opts:["Directly scale pannanum ads","Website/landing page build, social profiles setup, pixel/GA4 install","Client-ku invoice mattum anuppanum","Competitor business buy pannanum"], correct:1, fb:"Days 1-30 — foundation: website, social setup, GBP, tracking pixels install — idhu illama ads launch panna mudiyadhu."},
+  {q:"Real client case study (Royal Interiors) la first step enna?", opts:["Direct ah ₹15,000 ads launch pannidanum","Discovery & Planning — client brief, target audience define, competitor research","Office address maathanum","Domain immediately buy pannidanum"], correct:1, fb:"Eppa client work start pannalum, first step Discovery — client brief, audience define, competitor research, AFTER that dhaan website/ads build pannanum."},
+];
+
+(function() {
+  const container = document.getElementById('quizContainer');
+  const userAnswers = new Array(quizQuestions.length).fill(null);
+
+  quizQuestions.forEach((item, qIndex) => {
+    const qDiv = document.createElement('div');
+    qDiv.className = 'quiz-q';
+    qDiv.innerHTML = `
+      <div class="quiz-q-num">Question ${qIndex + 1} / ${quizQuestions.length}</div>
+      <div class="quiz-q-text">${item.q}</div>
+      <div class="quiz-opts" data-qindex="${qIndex}">
+        ${item.opts.map((opt, oIndex) => `
+          <div class="quiz-opt" data-oindex="${oIndex}">
+            <span class="opt-letter">${String.fromCharCode(65 + oIndex)}</span>
+            <span>${opt}</span>
+          </div>
+        `).join('')}
+      </div>
+      <div class="quiz-feedback" data-qindex="${qIndex}"></div>
+    `;
+    container.appendChild(qDiv);
+  });
+
+  function updateProgress() {
+    const answered = userAnswers.filter(a => a !== null).length;
+    const pct = Math.round((answered / quizQuestions.length) * 100);
+    document.getElementById('quizProgressFill').style.width = pct + '%';
+    document.getElementById('quizProgressText').textContent = answered + ' / ' + quizQuestions.length + ' answered';
+  }
+
+  container.addEventListener('click', function(e) {
+    const optEl = e.target.closest('.quiz-opt');
+    if (!optEl) return;
+    const optsWrap = optEl.closest('.quiz-opts');
+    const qIndex = parseInt(optsWrap.getAttribute('data-qindex'), 10);
+    const oIndex = parseInt(optEl.getAttribute('data-oindex'), 10);
+
+    userAnswers[qIndex] = oIndex;
+
+    const allOpts = optsWrap.querySelectorAll('.quiz-opt');
+    allOpts.forEach(o => o.classList.remove('selected'));
+    optEl.classList.add('selected');
+
+    updateProgress();
+  });
+
+  document.getElementById('quizSubmitBtn').addEventListener('click', function() {
+    let score = 0;
+
+    quizQuestions.forEach((item, qIndex) => {
+      const optsWrap = container.querySelector(`.quiz-opts[data-qindex="${qIndex}"]`);
+      const allOpts = optsWrap.querySelectorAll('.quiz-opt');
+      const fbDiv = container.querySelector(`.quiz-feedback[data-qindex="${qIndex}"]`);
+      const userChoice = userAnswers[qIndex];
+
+      allOpts.forEach((o, oIndex) => {
+        o.style.pointerEvents = 'none';
+        if (oIndex === item.correct) {
+          o.classList.add('correct');
+        } else if (oIndex === userChoice && userChoice !== item.correct) {
+          o.classList.add('incorrect');
+        }
+      });
+
+      if (userChoice === item.correct) {
+        score++;
+        fbDiv.classList.add('show', 'fb-correct');
+        fbDiv.textContent = '✓ Correct! ' + item.fb;
+      } else {
+        fbDiv.classList.add('show', 'fb-incorrect');
+        fbDiv.textContent = (userChoice === null ? '✗ Not answered. ' : '✗ Incorrect. ') + item.fb;
+      }
+    });
+
+    document.getElementById('quizSubmitBtn').disabled = true;
+    document.getElementById('quizSubmitBtn').textContent = 'Quiz Submitted';
+
+    const resultDiv = document.getElementById('quizResult');
+    document.getElementById('quizScoreNum').textContent = score + '/' + quizQuestions.length;
+
+    let msg = '';
+    const pct = Math.round((score / quizQuestions.length) * 100);
+    if (pct >= 90) {
+      msg = 'Semma! Neenga course-ah properly master pannirukeenga. Ready to handle real clients! 🚀';
+    } else if (pct >= 70) {
+      msg = 'Nalla score! Konjam weak areas irukku — andha modules-ah oru thadava revise pannunga.';
+    } else if (pct >= 50) {
+      msg = 'Decent start. But konjam modules properly padikkanum — especially missed questions-oda topics-ah revisit pannunga.';
+    } else {
+      msg = 'Course-ah veendum oru thadava padichu, idha retry pannunga. Practice + repetition dhaan key!';
+    }
+    document.getElementById('quizScoreMsg').textContent = msg;
+    resultDiv.classList.add('show');
+    resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+})();
+</script>
 
 <script>
   const toggle = document.getElementById('menuToggle');
