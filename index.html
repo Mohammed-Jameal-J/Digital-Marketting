@@ -262,6 +262,88 @@
   }
   .tool .tname{font-weight:700; color:var(--cyan); display:block; margin-bottom:4px; font-family:var(--font-display);}
 
+  /* ===== Landing page mockup ===== */
+  .lp-mockup-frame{
+    background:#060b18; border:1px solid var(--border); border-radius:14px;
+    padding:18px; margin:16px 0;
+  }
+  .lp-browser-bar{
+    display:flex; align-items:center; gap:6px; padding:8px 10px;
+    background:#0a1426; border-radius:8px 8px 0 0; border:1px solid var(--border); border-bottom:none;
+  }
+  .lp-browser-bar .dot{width:9px; height:9px; border-radius:50%; background:#3a4a6b;}
+  .lp-browser-bar .url{
+    flex:1; margin-left:8px; background:#0f1c38; border-radius:5px; padding:3px 10px;
+    font-family:var(--font-mono); font-size:11px; color:var(--text-mute);
+  }
+  .lp-page{
+    background:#fdfaf5; border-radius:0 0 10px 10px; overflow:hidden; color:#1a1a1a;
+    font-family:var(--font-body);
+  }
+  .lp-hero{
+    padding:38px 24px; text-align:center; background:linear-gradient(160deg,#f3ede0,#fdfaf5);
+  }
+  .lp-hero .tagline{font-size:11px; letter-spacing:2px; text-transform:uppercase; color:#9a6b3f; margin-bottom:8px; font-weight:700;}
+  .lp-hero h4{font-family:var(--font-display); font-size:21px; font-weight:800; color:#1a1a1a; max-width:480px; margin:0 auto 8px; line-height:1.25;}
+  .lp-hero p{font-size:12.5px; color:#5a5a52; margin-bottom:16px;}
+  .lp-cta-btn{
+    display:inline-flex; align-items:center; gap:6px; background:#25D366; color:#fff;
+    font-weight:700; font-size:12.5px; padding:10px 20px; border-radius:7px;
+  }
+  .lp-section{padding:22px 24px; border-top:1px solid #e8e1d3;}
+  .lp-section .lp-label{font-size:10.5px; letter-spacing:1.5px; text-transform:uppercase; color:#9a9286; text-align:center; margin-bottom:14px; font-weight:700;}
+  .lp-services{display:grid; grid-template-columns:repeat(4,1fr); gap:10px;}
+  .lp-service-card{background:#f3ede0; border-radius:8px; padding:14px 8px; text-align:center;}
+  .lp-service-card .ic{font-size:20px; margin-bottom:6px;}
+  .lp-service-card .lbl{font-size:11px; font-weight:700; color:#3a3a32;}
+  .lp-gallery{display:grid; grid-template-columns:repeat(3,1fr); gap:8px;}
+  .lp-gallery .ph{aspect-ratio:1; background:#e3dccb; border-radius:6px; display:flex; align-items:center; justify-content:center; color:#a89a7d; font-size:18px;}
+  .lp-process{display:grid; grid-template-columns:repeat(4,1fr); gap:8px;}
+  .lp-process .step{text-align:center;}
+  .lp-process .num{width:26px; height:26px; border-radius:50%; background:#9a6b3f; color:#fff; font-weight:700; font-size:12px; display:flex; align-items:center; justify-content:center; margin:0 auto 6px;}
+  .lp-process .lbl{font-size:10.5px; color:#3a3a32; font-weight:600;}
+  .lp-testimonial{background:#f3ede0; text-align:center; padding:18px 24px;}
+  .lp-testimonial .stars{color:#d4a017; font-size:13px; margin-bottom:6px;}
+  .lp-testimonial p{font-size:12px; color:#3a3a32; font-style:italic; margin:0;}
+  .lp-faq .q{font-size:12.5px; font-weight:700; color:#1a1a1a; margin-bottom:3px;}
+  .lp-faq .a{font-size:11.5px; color:#6a6258; margin-bottom:12px;}
+  .lp-final{text-align:center; padding:26px 24px;}
+  .lp-final .small{font-size:10.5px; color:#9a9286; margin-top:12px;}
+
+  /* ===== Ad creative card mockups ===== */
+  .ad-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:12px; margin:16px 0;}
+  .ad-card{
+    background:#fff; border-radius:10px; overflow:hidden; color:#1a1a1a;
+    border:1px solid #2a2a2a;
+  }
+  .ad-card .ad-header{display:flex; align-items:center; gap:6px; padding:7px 8px;}
+  .ad-card .ad-header .av{width:18px; height:18px; border-radius:50%; background:#2563eb;}
+  .ad-card .ad-header .nm{font-size:9.5px; font-weight:700;}
+  .ad-card .ad-visual{aspect-ratio:1; display:flex; align-items:center; justify-content:center; position:relative;}
+  .ad-card .ad-caption{padding:8px;}
+  .ad-card .ad-caption .h{font-size:10px; font-weight:700; margin-bottom:2px;}
+  .ad-card .ad-caption .s{font-size:8.5px; color:#7a7a7a;}
+  .ad-split{display:grid; grid-template-columns:1fr 1fr; width:100%; height:100%;}
+  .ad-split > div{background:#e8e1d3; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px;}
+  .ad-split > div:first-child{border-right:1px solid #d2c8b0;}
+  .ad-split .tag{font-size:8px; color:#9a9286; font-weight:700; text-transform:uppercase;}
+  .ad-single{background:#e8e1d3; width:100%; height:100%; display:flex; align-items:center; justify-content:center; font-size:26px;}
+  .ad-offer{background:#1e3a8a; color:#fff; width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:10px; gap:4px;}
+  .ad-offer .o1{font-size:11px; font-weight:800;}
+  .ad-offer .o2{font-size:8.5px;}
+  .ad-carousel{display:grid; grid-template-columns:1fr 1fr 1fr; width:100%; height:100%;}
+  .ad-carousel > div{background:#e8e1d3; display:flex; align-items:center; justify-content:center; font-size:16px;}
+  .ad-carousel > div:not(:last-child){border-right:1px solid #d2c8b0;}
+  .ad-testi{background:#e8e1d3; width:100%; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:10px; gap:5px;}
+  .ad-testi .stars{color:#d4a017; font-size:10px;}
+  .ad-testi .q{font-size:9px; font-style:italic; color:#3a3a32;}
+  .ad-testi .a{font-size:8px; color:#7a7a7a;}
+
+  @media (max-width: 980px){
+    .lp-services, .ad-grid{grid-template-columns:repeat(2,1fr);}
+    .lp-gallery, .lp-process, .ad-carousel{grid-template-columns:repeat(2,1fr);}
+  }
+
   footer{
     padding:50px 48px; text-align:center; color:var(--text-mute); font-size:13px;
   }
@@ -942,7 +1024,7 @@
           <div class="advantage"><span class="check">✓</span><div><strong>High intent:</strong> "Buy" mindset la irukravanga-ah target pannalam</div></div>
           <div class="advantage"><span class="check">✓</span><div><strong>Local search dominance:</strong> "near me" searches la unga business top la varum</div></div>
           <div class="advantage"><span class="check">✓</span><div><strong>Measurable ROI:</strong> Exact keyword/click level data</div></div>
-          <div class="advantage"><span class="check">✓</span><div><strong>Performance Max:</strong> AI automation, multiple channels ஒரே campaign la</div></div>
+          <div class="advantage"><span class="check">✓</span><div><strong>Performance Max:</strong> AI automation, multiple channels oru campaign la</div></div>
         </div>
         <div class="card">
           <h3><span class="icon">⚖️</span> Meta Ads vs Google Ads — Quick Compare</h3>
@@ -1701,7 +1783,7 @@
       <div class="card">
         <h3><span class="icon">✅</span> Key Advantages</h3>
         <div class="advantage"><span class="check">✓</span><div><strong>Visual + price upfront:</strong> Users product paathu, price paathu, already interested ah click pannuranga — high intent</div></div>
-        <div class="advantage"><span class="check">✓</span><div><strong>Automation:</strong> Performance Max — multiple channels ஒரே campaign la manage</div></div>
+        <div class="advantage"><span class="check">✓</span><div><strong>Automation:</strong> Performance Max — multiple channels oru campaign la manage</div></div>
         <div class="advantage"><span class="check">✓</span><div><strong>Auto-sync:</strong> Shopify/WooCommerce apps — manual feed update venam, automatic</div></div>
       </div>
     </section>
@@ -2891,6 +2973,68 @@
       </div>
 
       <div class="card">
+        <h3><span class="icon">🖥️</span> Visual Mockup — How the Actual Landing Page Looks</h3>
+        <p>Idhu dhaan Step 1 la sonna structure-ah, real page maadhiri render panni kaattirukkom — idha exact ah Framer/WordPress la build pannalam.</p>
+        <div class="lp-mockup-frame">
+          <div class="lp-browser-bar">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="url">royalinteriors.com</span>
+          </div>
+          <div class="lp-page">
+            <div class="lp-hero">
+              <div class="tagline">Royal Interiors — Coimbatore</div>
+              <h4>Transform your home with Coimbatore's trusted interior experts</h4>
+              <p>Modular kitchens, false ceilings, wardrobes &amp; full home interiors</p>
+              <div class="lp-cta-btn">💬 Get free design consultation</div>
+            </div>
+            <div class="lp-section">
+              <p style="font-size:12.5px; text-align:center; color:#5a5a52; margin:0;">Renovation planning headache-ah irukka? Budget, timeline, quality — ellam confusion-ah?</p>
+            </div>
+            <div class="lp-section">
+              <div class="lp-label">Our services</div>
+              <div class="lp-services">
+                <div class="lp-service-card"><div class="ic">🍳</div><div class="lbl">Modular Kitchen</div></div>
+                <div class="lp-service-card"><div class="ic">🏠</div><div class="lbl">False Ceiling</div></div>
+                <div class="lp-service-card"><div class="ic">🚪</div><div class="lbl">Wardrobes</div></div>
+                <div class="lp-service-card"><div class="ic">🛋️</div><div class="lbl">Full Home</div></div>
+              </div>
+            </div>
+            <div class="lp-section">
+              <div class="lp-label">Our work</div>
+              <div class="lp-gallery">
+                <div class="ph">🖼️</div><div class="ph">🖼️</div><div class="ph">🖼️</div>
+                <div class="ph">🖼️</div><div class="ph">🖼️</div><div class="ph">🖼️</div>
+              </div>
+            </div>
+            <div class="lp-section">
+              <div class="lp-label">How it works</div>
+              <div class="lp-process">
+                <div class="step"><div class="num">1</div><div class="lbl">Free consultation</div></div>
+                <div class="step"><div class="num">2</div><div class="lbl">Design &amp; quote</div></div>
+                <div class="step"><div class="num">3</div><div class="lbl">Execution</div></div>
+                <div class="step"><div class="num">4</div><div class="lbl">Handover</div></div>
+              </div>
+            </div>
+            <div class="lp-testimonial">
+              <div class="stars">★★★★★</div>
+              <p>"Royal Interiors transformed our home in just 30 days" — Priya, Saravanampatti</p>
+            </div>
+            <div class="lp-section lp-faq">
+              <div class="q">Evlo naal aagum?</div>
+              <div class="a">Most kitchens complete in 20-30 days.</div>
+              <div class="q">Free site visit-a?</div>
+              <div class="a">Yes, first consultation &amp; site visit free.</div>
+            </div>
+            <div class="lp-final">
+              <div class="lp-cta-btn">💬 Book free consultation</div>
+              <div class="small">Privacy Policy · Refund Policy · +91 98765 43210</div>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:13px; color:var(--text-mute);">Idha Framer la build panna — ovvoru section-ah oru "block" ah drag panni, illustrative icons-ah real project photos-oda replace pannunga (Module 10 — Canva/Photoroom).</p>
+      </div>
+
+      <div class="card">
         <h3><span class="icon">🎨</span> Step 3 — Creating Ad Images for Interior Design (Applying Module 10)</h3>
         <p>Using Canva (Module 10) — create 5 ad creative variations from client's project photos:</p>
         <ul class="steps">
@@ -2900,6 +3044,47 @@
           <li><span class="stepnum">4</span><div><strong>Creative 4 — Carousel (multiple images):</strong> 4-5 different room types (kitchen, bedroom, living room, office) — "Swipe to see our work"</div></li>
           <li><span class="stepnum">5</span><div><strong>Creative 5 — Testimonial-style:</strong> Client quote overlaid on a project photo — "⭐⭐⭐⭐⭐ 'Royal Interiors transformed our home in just 30 days' - Mrs. Priya, Saravanampatti"</div></li>
         </ul>
+
+        <p style="font-size:13px; color:var(--text-mute); margin-top:14px;">Indha 5 creatives eppadi actual ah Instagram/Meta ad ah kaattum nu visual mockup:</p>
+        <div class="ad-grid">
+          <div class="ad-card">
+            <div class="ad-header"><span class="av"></span><span class="nm">Royal Interiors</span></div>
+            <div class="ad-visual">
+              <div class="ad-split">
+                <div><span style="font-size:18px;">🏚️</span><span class="tag">Before</span></div>
+                <div><span style="font-size:18px;">🍳</span><span class="tag">After</span></div>
+              </div>
+            </div>
+            <div class="ad-caption"><div class="h">Outdated to outstanding</div><div class="s">Before/after transformation</div></div>
+          </div>
+          <div class="ad-card">
+            <div class="ad-header"><span class="av"></span><span class="nm">Royal Interiors</span></div>
+            <div class="ad-visual"><div class="ad-single">🛋️</div></div>
+            <div class="ad-caption"><div class="h">Modern living room interiors</div><div class="s">Single project, minimal text</div></div>
+          </div>
+          <div class="ad-card">
+            <div class="ad-header"><span class="av"></span><span class="nm">Royal Interiors</span></div>
+            <div class="ad-visual">
+              <div class="ad-offer"><div class="o1">Free 3D design + site visit</div><div class="o2">Limited slots this month</div></div>
+            </div>
+            <div class="ad-caption"><div class="h">Offer-based creative</div><div class="s">Text-led, no photo needed</div></div>
+          </div>
+          <div class="ad-card">
+            <div class="ad-header"><span class="av"></span><span class="nm">Royal Interiors</span></div>
+            <div class="ad-visual">
+              <div class="ad-carousel"><div>🍳</div><div>🛏️</div><div>🛋️</div></div>
+            </div>
+            <div class="ad-caption"><div class="h">Swipe to see our work</div><div class="s">Carousel, 4-5 room types</div></div>
+          </div>
+          <div class="ad-card">
+            <div class="ad-header"><span class="av"></span><span class="nm">Royal Interiors</span></div>
+            <div class="ad-visual">
+              <div class="ad-testi"><div class="stars">★★★★★</div><div class="q">"Transformed our home in 30 days"</div><div class="a">— Priya, Saravanampatti</div></div>
+            </div>
+            <div class="ad-caption"><div class="h">Testimonial style</div><div class="s">Quote over project photo</div></div>
+          </div>
+        </div>
+
         <div class="example-box">
           <span class="tag">Canva Workflow (Practical Steps)</span>
           <p>1) Canva.com → search "Facebook Ad" or "Instagram Post" template → choose a clean, modern template. 2) Upload client's project photo (remove background if needed using Canva's BG remover). 3) Replace template text with your headline (keep it short — 5-7 words). 4) Apply brand colors (ask client for their logo colors, or pick warm/elegant tones common in interior design — beige, navy, gold accents). 5) Export as PNG, 1080x1080 (square, works for both Instagram feed and Meta ads) and also 1080x1920 (for Stories/Reels).</p>
